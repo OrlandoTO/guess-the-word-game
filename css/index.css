@@ -72,25 +72,25 @@ body {
 
 }
 
-.card-trie-circle {
+.card__trie__circle {
     height: 6px;
     width: 6px;
     background-color: #4A5567;
     border-radius: 100%;
 }
 
-.card-trie-circle.active{
+.card__trie__circle.active{
     background-color: #7429C6;
 }
 
-.card__tries_circles{
+.card__tries__circles{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
 }
 
-.card__info__tries,.card__info__tries>span,.card__tries_circles,.card__mistakes{
+.card__info__tries,.card__info__tries>span,.card__tries__circles,.card__mistakes{
     font-size: 12px;
 }
 

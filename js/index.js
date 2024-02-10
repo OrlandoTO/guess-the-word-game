@@ -11,6 +11,7 @@ let cardWordGuess = document.getElementById('card-word-guess')
 let cardInputLetters = document.getElementById('card-input-letters')
 let cardCurrentTries = document.getElementById('card-current-tries')
 let cardTotalTries = document.getElementById('card-total-tries')
+let cardTriesCircles  = document.getElementById('card-tries-circles')
 let cardMistakes = document.getElementById('card-mistakes')
 let btnRandom = document.getElementById('btn-random')
 let btnReset = document.getElementById('btn-reset')
@@ -23,9 +24,9 @@ function init() {
     console.log(indexToWordRandom)
     let shuffleWord = shuffleArray(WORDSTOGUEST[indexToWordRandom].split(''))
     let wordLength = shuffleWord.length
-    cardTotalTries.innerHTML=wordLength
+    cardTotalTries.innerHTML = wordLength
     cardCurrentTries.innerHTML = currentTries
-    
+
     cardWordGuess.innerHTML = shuffleWord.join('')
     generateInputs(wordLength)
 
@@ -49,6 +50,7 @@ btnReset.addEventListener('click', reset)
 
 function generateInputs(wordLength) {
     cardInputLetters.replaceChildren('')
+    let circles = ''
     for (let index = 0; index < wordLength; index++) {
         let inputElement = document.createElement('input')
         inputElement.setAttribute('maxlength', 1)
@@ -56,8 +58,10 @@ function generateInputs(wordLength) {
         inputElement.setAttribute('index', index)
         inputElement.setAttribute('type', 'text')
         cardInputLetters.append(inputElement)
+        circles = circles + `<div class='card__trie__circle'></div>`
 
     }
+    cardTriesCircles.innerHTML= circles
     cardInputLetters.firstElementChild.focus()
     Array.from(cardInputLetters.childNodes).forEach(e => {
         e.addEventListener('keyup', function () {
@@ -71,11 +75,15 @@ function generateInputs(wordLength) {
                 if (currentLetter !== e.value) {
                     currentMistakes.push(e.value)
                 }
-
-
                 cardCurrentTries.innerHTML = currentTries
                 cardMistakes.innerHTML = currentMistakes.join(', ')
-                
+                Array.from(cardTriesCircles.children).forEach((e,i)=>{
+                    if(i==index){
+                        e.classList.add('active')
+                    }
+                    
+                    
+                })
                 if (currentTries >= WORDSTOGUEST[indexToWordRandom].length) {
                     if (currentMistakes.length == 0) {
                         alert('🎉 Success')
@@ -85,12 +93,14 @@ function generateInputs(wordLength) {
                 }
                 if (e.nextSibling == null) return
                 e.nextSibling.focus()
+
             }
 
         })
     })
 
 }
+
 
 function shuffleArray(array) {
     const shuffledArray = array.slice();
