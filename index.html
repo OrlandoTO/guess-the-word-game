@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>GUESS THE WORD GAME</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class='card'>
+        <div class='card__header'>
+            <div class='card__title'><img src="./img/Word Scramblle.svg" alt=""></div>
+            <div class='card__word__guess' id='card-word-guess'>
+
+            </div>
+        </div>
+        <div class='card__body'>
+            <div class='card__show__feedback'>
+                <div class='card__container__tries'>
+                    <div class="card__info__tries">
+                        Tries(<span id="card-current-tries" class="card__current__tries"></span>/<span
+                            class="card__total__tries" id="card-total-tries"></span>):
+                    </div>
+                    <div class="card__tries_circles">
+                        <div class="card-trie-circle active">
+
+                        </div>
+                        <div class="card-trie-circle">
+
+                        </div>
+                        <div class="card-trie-circle">
+
+                        </div>
+                    </div>
+                </div>
+                <div class='card__mistakes'>
+                    Mistakes: <span id='card-mistakes'></span>
+                </div>
+
+            </div>
+            <div class='card__input__letters' id='card-input-letters'>
+
+            </div>
+        </div>
+
+        <div class='card-footer'>
+            <button class='btn' id='btn-random'>
+                Random
+            </button>
+            <button class='btn' id='btn-reset'>
+                Reset
+            </button>
+        </div>
+    </div>
+    <script src='./js/index.js'></script>
+</body>
+<!-- <div class="grid-1"></div>
+<div class="grid-2"></div>
+<div class="grid-3"></div>
+ -->
+</html>

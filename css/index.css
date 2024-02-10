@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: Outfit, sans-serif;
+}
+
+body {
+    background-image: url('../img/bg-guess-the-word.png');
+    background-size: cover;
+    margin: 0 72px;
+    /* position: relative; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .grid-1,
+.grid-2,
+.grid-3 {
+    position: absolute;
+    background-color: #bc40b894;
+    width: calc((100% - 64px)/3);
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -100;
+} */
+
+.card {
+    width: calc((100% - 64px)/3 + 64px);
+    background-color: #192032;
+    border-radius: 20px;
+    padding: 32px;
+    min-width: 300px;
+
+}
+
+.card__header {
+    text-align: center;
+}
+
+.card__word__guess {
+    background-color: #4A5567;
+    color: #97A3B6;
+    font-size: 2em;
+    padding: 12px 0;
+    border-radius: 10px;
+    border-bottom: 4px solid #030616;
+    margin: 20px 0;
+    font-weight: 500;
+    letter-spacing: 10px;
+
+}
+
+.card__show__feedback {
+    display: flex;
+    justify-content: space-around;
+    
+    color: #4A5567;
+}
+
+.card__container__tries {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.card-trie-circle {
+    height: 6px;
+    width: 6px;
+    background-color: #4A5567;
+    border-radius: 100%;
+}
+
+.card-trie-circle.active{
+    background-color: #7429C6;
+}
+
+.card__tries_circles{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.card__info__tries,.card__info__tries>span,.card__tries_circles,.card__mistakes{
+    font-size: 12px;
+}
+
+.card__mistakes>span{
+    font-weight: 500;
+    color: #97A3B6;
+}
+.card__input__letters{
+    margin: 40px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    
+}
+.card__input__letters>input[type='text']{
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid #4A5567;
+    border-radius: 5px;
+    color: #F2F5F9;
+    font-weight: bold;
+    text-align: center;
+    outline: none;
+}
+
+.card__input__letters>input[type='text']:focus{
+    caret-color: #F2F5F9;
+    border-color: #672171;
+
+}
+.card-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+.btn{
+    background-color: #C951E7;
+    color: #F2F5F9;
+    font-weight: 500;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 10px;
+    font-size: 14px;
+    border-bottom: 4px solid #672171;
+    cursor: pointer;
+}
+/* .grid-2 {
+    left: calc(((100% - 64px)/3) + 32px);
+    margin-right: 32px;
+}
+
+.grid-3 {
+    left: calc(2*((100% - 64px)/3) + 64px);
+} */
